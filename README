@@ -1,0 +1,17 @@
+Python Eway Client
+-------------------------------
+
+This library provides an interface to make transactions with the Eway (http://www.eway.com.au) API.
+
+Requirements
+------------
+- Python 2.5+
+- httplib2 (http://code.google.com/p/httplib2/)
+
+- Managed Clients Requires ZSI (http://pywebsvcs.sourceforge.net/) 
+
+Usage
+-----
+
+Refer to the client.py file in the tests subdirectory for example usage of the client.
+Refer to the managed.py file in the tests subdirectory for example usage of the managed client api.
