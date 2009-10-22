@@ -18,6 +18,16 @@ EWAY_PAYMENT_HOSTED_REAL_TIME_CVN_TESTING_MODE = 'https://www.eway.com.au/gatewa
 EWAY_PAYMENT_STORED_LIVE = 'https://www.eway.com.au/gateway/xmlstored.asp'
 EWAY_PAYMENT_MANAGED_TESTING_MODE = 'https://www.eway.com.au/gateway/ManagedPaymentService/test/managedCreditCardPayment.asmx'
 
+EWAY_PAYMENT_LIVE_AUTH = 'https://www.eway.com.au/gateway/xmlauth.asp'
+EWAY_PAYMENT_LIVE_AUTH_TESTING_MODE = 'https://www.eway.com.au/gateway/xmltest/authtestpage.asp'
+EWAY_PAYMENT_LIVE_AUTH_CVN = 'https://www.eway.com.au/gateway_cvn/xmlauth.asp'
+EWAY_PAYMENT_LIVE_AUTH_CVN_TESTING_MODE = 'https://www.eway.com.au/gateway_cvn/xmltest/authtestpage.asp'
+
+EWAY_PAYMENT_LIVE_AUTH_COMPLETE = 'https://www.eway.com.au/gateway/xmlauthcomplete.asp'
+EWAY_PAYMENT_LIVE_AUTH_COMPLETE_TESTING_MODE = 'https://www.eway.com.au/gateway/xmltest/authcompletetestpage.asp'
+
+EWAY_PAYMENT_LIVE_AUTH_VOID = 'https://www.eway.com.au/gateway/xmlauthvoid.asp'
+EWAY_PAYMENT_LIVE_AUTH_VOID_TESTING_MODE = 'https://www.eway.com.au/gateway/xmltest/authvoidtestpage.asp'
 
 CUSTOMER_ID = "87654321"    # Set this to your eWAY Customer ID
 PAYMENT_METHOD = REAL_TIME  # Set this to the payment gatway you would like to use (REAL_TIME, REAL_TIME_CVN or GEO_IP_ANTI_FRAUD)

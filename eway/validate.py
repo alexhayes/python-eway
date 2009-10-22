@@ -1,11 +1,18 @@
 class ValidationError(Exception):
+    
     def __init__(self, message):
         self.message = message
 
+    def _get_message(self): 
+        return self._message
+    def _set_message(self, message): 
+        self._message = message
+    message = property(_get_message, _set_message)
         
 class Field(object):
-    def __init__(self, external_name=None, default=None, required=True):
+    def __init__(self, external_name=None, name=None, default=None, required=True):
         self.external_name = external_name
+        self.name = name
         self.required = required
         self._default = default
     
@@ -20,7 +27,7 @@ class Field(object):
     
     def is_valid(self):
         if self.required and self.value is None:
-            raise ValidationError("Field Required")
+            raise ValidationError("%s required" % (self.name))
         return True
     
     def _set_value(self, value):
@@ -80,6 +87,12 @@ class ValidatorBase(object):
         if self.is_valid():
             return self._convert(self.fields)
         return None
+    
+    def get_errors(self):
+        """
+        Return a dictionary of name/value paired errors
+        """
+        return self._errors
 
 class Validator(ValidatorBase):
     __metaclass__ = FieldsMetaclass
