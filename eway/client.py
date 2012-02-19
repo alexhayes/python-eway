@@ -34,7 +34,7 @@ class EwayPaymentClient(object):
             else:
                 self.gateway_url = config.EWAY_PAYMENT_LIVE_REAL_TIME_CVN_TESTING_MODE
         elif method == config.STORED:
-            self.gateway_url = config.EWAY_STORED_LIVE
+            self.gateway_url = config.EWAY_PAYMENT_STORED_LIVE
         elif method == config.GEO_IP_ANTI_FRAUD:
             if live_gateway:
                 self.gateway_url = config.EWAY_PAYMENT_LIVE_GEO_IP_ANTI_FRAUD
@@ -71,6 +71,8 @@ class EwayPaymentClient(object):
             gateway_url = config.EWAY_PAYMENT_LIVE_AUTH_CVN
         elif self.gateway_url == config.EWAY_PAYMENT_LIVE_REAL_TIME_CVN_TESTING_MODE:
             gateway_url = config.EWAY_PAYMENT_LIVE_AUTH_CVN_TESTING_MODE
+        elif self.gateway_url == config.EWAY_PAYMENT_STORED_LIVE:
+            gateway_url = config.EWAY_PAYMENT_STORED_LIVE
 
         return self.prepare_transaction(gateway_url, amount, credit_card, customer, reference)
     
